@@ -20,7 +20,7 @@ public class Coin extends MyActor{
         textureRegion.setRegion(MathUtils.random(0, 5)*32, 0, 32,32);
         setSize(textureRegion.getRegionWidth(), textureRegion.getRegionHeight());
 
-        dx = MathUtils.random(-5, 5);
+        dx = MathUtils.random(-10, 10);
         dy = MathUtils.random(5, 10);
         tap = Gdx.audio.newSound(Gdx.files.internal("tap.wav"));
         tap.play();
@@ -31,7 +31,7 @@ public class Coin extends MyActor{
         dy -= gravity;
         dx *= 0.9;
         moveBy(dx, dy);
-        setColor(1,1,1, getColor().a - 0.03f);
+        setColor(1,1,1, getColor().a - 0.01f);
         if(getColor().a < 0.01){
             remove();
         }
