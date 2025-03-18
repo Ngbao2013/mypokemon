@@ -48,6 +48,7 @@ public class Master implements Screen {
 
     static int money = 0;
     static int time = 0;
+    static int solanclick = 0;
     static int autoplusnumber1 = 0;
     static int autoplusnumber2 = 0;
     static int autoplusnumber3 = 0;
@@ -173,7 +174,7 @@ public class Master implements Screen {
         item24 = new Item24(0, 0, stage, 24);
 
 
-        pet = new Pet(new Texture("venusaur.png"), 0, 0, stage, 12, 14);
+        pet = new Pet(new Texture("fushigidane.png"), 0, 0, stage);
         pet.setPosition(Gdx.graphics.getWidth() / 2 - pet.getWidth() / 2, Gdx.graphics.getHeight() / 2 - pet.getHeight() / 2);
 
         egg = new Egg(0, 0, stage);
@@ -189,7 +190,17 @@ public class Master implements Screen {
     @Override
     public void render(float v) {
         ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
+        pet.setPosition(Gdx.graphics.getWidth() / 2 - pet.getWidth() / 2, Gdx.graphics.getHeight() / 2 - pet.getHeight() / 2);
+
         time++;
+        if (solanclick == 200){
+
+            pet = new Pet(new Texture("fushigibana.png"), 0, 0, stage);
+        }
+        if (solanclick == 100){
+            pet = new Pet(new Texture("fushigisou.png"), 0, 0, stage);
+        }
+
         if (time % 60 == 0) {
             if (autoplus2 = true) {
                 money += autoplusnumber2;
@@ -280,6 +291,7 @@ public class Master implements Screen {
 
         batch.begin();
         font.draw(batch, "coin: " + money, 0, Gdx.graphics.getHeight() - 32);
+        font.draw(batch, "clicknumber: " + solanclick, 0, Gdx.graphics.getHeight() );
         batch.end();
     }
 
