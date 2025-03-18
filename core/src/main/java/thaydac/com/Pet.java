@@ -32,7 +32,7 @@ public class Pet extends MyActorAnimation{
                     Actions.color(new Color(1,1,1,1))
                 ));
                 addAction(Actions.sequence(
-                    Actions.moveBy(MathUtils.random(-5, 5), MathUtils.random(-5, 5))
+//                    Actions.moveBy(MathUtils.random(-5, 5), MathUtils.random(-5, 5))
                     //Actions.moveTo(Gdx.graphics.getWidth()/2 - getWidth()/2, Gdx.graphics.getHeight()/2 - getHeight()/2)
                 ));
             }
